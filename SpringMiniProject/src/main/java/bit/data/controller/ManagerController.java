@@ -47,8 +47,8 @@ public class ManagerController {
         int mon = 0;
         //총 매출액 + 월별 그래프
         Date date = new Date();
-        int year = date.getYear() + 1900;
-        int month = date.getMonth() + 1;
+        int year = 2023;
+        int month = 10;
         List<MyLecJoinDto> list = myLecJoinService.getTotalIncom(year, mon);
         int totalincom = 0;
         int incom1 = 0; int incom2 = 0;

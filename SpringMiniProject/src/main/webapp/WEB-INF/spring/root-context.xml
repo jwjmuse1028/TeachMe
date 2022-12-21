@@ -7,9 +7,9 @@
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
         <!-- 2조 AWS sqlDB -->
-        <property name="url" value="jdbc:mysql://errjava2.cup46end77ud.ap-northeast-2.rds.amazonaws.com:3306/errjava2?serverTimezone=Asia/Seoul"></property>
-        <property name="username" value="adminej2"></property>
-        <property name="password" value="java0711"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/errjava2?serverTimezone=Asia/Seoul"></property>
+        <property name="username" value="angel"></property>
+        <property name="password" value="1234"></property>
     </bean>
    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
       <property name="dataSource" ref="dataSource"/>

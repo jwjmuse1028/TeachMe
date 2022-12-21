@@ -161,7 +161,7 @@
                             <%--var deleteButton = <button type="button" id="delete-lecde" class="btn btn-outline-danger delete-button" onclick="location.href='${root}/deleteLectureDetail?lecdenum=${dtolist.lecdenum}'">강의 삭제</button>;--%>
                             var presentlectureA = "";
                             var presentlectureB = "";
-                            if ("${dtolist.lecyear}" == year && "${dtolist.lecmonth}" == month) {
+                            if ("${dtolist.lecyear}" == 2023 && "${dtolist.lecmonth}" == month) {
                                 presentlectureA += "${dtolist.teaname} (${dtolist.roomnum}호)"
                                 presentlectureB += " <h5 class='show-lecday${dtolist.lecdenum}'></h5>";
                                 presentlectureB += " <p>${dtolist.lectime}교시</p>";

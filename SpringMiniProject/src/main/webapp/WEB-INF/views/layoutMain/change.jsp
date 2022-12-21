@@ -269,7 +269,7 @@
                     </div>
                     <div class="col-lg-10 col-sm-12">
                         <h3><b style="color: white;">세 번째</b></h3>
-                        <p style="color: white;"><b style="white;">매 해 바뀌는 입시제도 하에서 학생 개개인에게 맞는 학습방법과 전략을 짜기 위해선 학생이 원하는 수강 목록과 선생님을 고르되
+                        <p style="color: white;"><b>매 해 바뀌는 입시제도 하에서 학생 개개인에게 맞는 학습방법과 전략을 짜기 위해선 학생이 원하는 수강 목록과 선생님을 고르되
                             자신이 책임지고 수업에 임해야 한다는 점을
                             강조하며 만든 시스템입니다</b> </p>
                         <%--                            멋진 도전을 위해 함께한다면 결코 후회없는 1년이 될 것 입니다. </p>--%>
@@ -540,7 +540,7 @@
     // });
 
 
-    var dday = new Date("November 17, 2022, 0:00:00").getTime();
+    var dday = new Date("November 17, 2023, 0:00:00").getTime();
 
     setInterval(function () {
 
@@ -550,7 +550,7 @@
         var hour = Math.ceil((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var min = Math.ceil((gap % (1000 * 60 * 60)) / (1000 * 60));
         var sec = Math.ceil((gap % (1000 * 60)) / 1000);
-        document.getElementById("count").innerHTML = "<b>2022년도 수능 D-DAY&nbsp;</b>  " + day + "일 " + hour + "시간 " + min + "분 " + sec + "초";
+        document.getElementById("count").innerHTML = "<b>2023년도 수능 D-DAY&nbsp;</b>  " + day + "일 " + hour + "시간 " + min + "분 " + sec + "초";
     }, 1000);
 
 

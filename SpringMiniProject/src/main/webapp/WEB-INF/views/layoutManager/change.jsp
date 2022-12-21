@@ -169,8 +169,8 @@
 <script>
 
     var date = new Date();
-    var year = date.getFullYear();
-    var month = date.getMonth();
+    var year = 2023;
+    var month = 10;
     document.getElementById("nowMonth").innerText=month;
     document.getElementById("nowYear").innerText=year;
 

@@ -9,14 +9,24 @@
 		from lecture join lecdetail on lecture.lecnum = lecdetail.lecnum where lecdenum = #{lecdenum}
 		
 	</select>
-	
+
 	<select id="selectBestLec" resultType="readypayDto" >
-	
-	    SELECT lecture.teaname, lecture.lecname, lecdetail.lecdenum , lecdetail.roomnum, lecdetail.lectime,  lecture.avgstar,
-        lecdetail.lecmonth, lecdetail.lecday ,lecture.lecphoto , lecdetail.price, lecture.lectypea , lecture.lectypeb
-		from lecdetail join lecture on lecture.lecnum = lecdetail.lecnum  GROUP BY lecture.lecname order by avgstar desc limit 5 ;
-	
-	
+		SELECT lecture.teaname,
+		lecture.lecname,
+		lecdetail.lecdenum,
+		lecdetail.roomnum,
+		lecdetail.lectime,
+		lecture.avgstar,
+		lecdetail.lecmonth,
+		lecdetail.lecday,
+		lecture.lecphoto,
+		lecdetail.price,
+		lecture.lectypea,
+		lecture.lectypeb
+		from lecdetail
+		join lecture on lecture.lecnum = lecdetail.lecnum
+		<!-- GROUP BY lecture.lecname -->
+		order by avgstar desc limit 5
 	</select>
 	
 	<select id="MainGetAllLecture"  resultType="readypayDto">
