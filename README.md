@@ -61,7 +61,7 @@ A) 모든 수업은 오프라인이고, 마치 상품을 구입 하듯이 온라
 * 기간 : 2022년 9월 29일 ~ 22년 10월 16일
 * 팀원 : 총 6명
 
-|이름|역할|담당기능|Github 주소|
+|**이름**|**역할**|**담당기능**|**Github 주소**|
 |---|---|---|---|
 |이준민|풀스택|관리자페이지, 회원+강좌 관리|https://github.com/jxnmin|
 |김태민|풀스택|QnA, 메인페이지|https://github.com/commitonly|
@@ -70,6 +70,37 @@ A) 모든 수업은 오프라인이고, 마치 상품을 구입 하듯이 온라
 |최진아|풀스택|시간표, 마이페이지|https://github.com/j-a-27|
 |정우진|풀스택|게시판, 마이커뮤니티|https://github.com/jwjmuse1028|
 
+---
+
+## 사용기술
+
+* ### **Back** :
+   * java
+   * SpringBoot
+   * MyBatis
+   * Axios
+   * MySQL
+   
+* ### **Front** :
+   * React
+   * Router
+   * HTML/CSS
+   * JavaScript
+   * Material-UI
+   
+* ### **Tool** :
+   * IntelliJ
+   * Git
+   * AWS S3
+   * AWS RDS
+   * Workbench
+   * WebSocket
+   * Selenium
+
+* ### **API** :
+   * Kakao 지도 API
+   * Kakao 주소 API
+---
 
 ## ERD
 
