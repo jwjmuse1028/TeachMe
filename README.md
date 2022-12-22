@@ -48,5 +48,11 @@ A) 모든 수업은 오프라인이고, 마치 상품을 구입 하듯이 온라
   * 좋아요 한 글 출력
   * 댓글 단 글 출력
   * 클릭시 해당글로 이동
-  
+  ---
+<img src="https://github.com/jwjmuse1028/TeachMe/blob/main/image.png" width="600">
+<img src="https://github.com/jwjmuse1028/TeachMe/blob/main/image2.png" width="600">
+<img src="https://github.com/jwjmuse1028/TeachMe/blob/main/image3.png" width="600">
+<img src="https://github.com/jwjmuse1028/TeachMe/blob/main/image4.png" width="600">
+<img src="https://github.com/jwjmuse1028/TeachMe/blob/main/image5.png" width="600">
+
   
