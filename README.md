@@ -76,30 +76,27 @@ A) 모든 수업은 오프라인이고, 마치 상품을 구입 하듯이 온라
 
 * ### **Back** :
    * java
-   * SpringBoot
+   * SpringFramework
    * MyBatis
-   * Axios
    * MySQL
    
 * ### **Front** :
-   * React
-   * Router
    * HTML/CSS
    * JavaScript
-   * Material-UI
+   * Jquery
+   * Bootstrap
    
 * ### **Tool** :
    * IntelliJ
-   * Git
-   * AWS S3
-   * AWS RDS
+   * Apache Tomcat
+   * AWS
    * Workbench
-   * WebSocket
-   * Selenium
+   * Git
 
 * ### **API** :
-   * Kakao 지도 API
-   * Kakao 주소 API
+   * 결제 API
+   * Kakao 로그인 API
+   
 ---
 
 ## ERD
