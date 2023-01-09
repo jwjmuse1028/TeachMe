@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="bit.data.dao.ReportBoardDao">
-    <select id="checkReportBoard" parameterType="Map" resultType="int">
+    <select id="checkReportBoard" parameterType="Map" resultType="int">-- 신고 여부 확인 (0 또는 1)
         select count(*) from reportboard where boardnum=#{boardnum} and usernum=#{usernum}
     </select>
     <insert id="insertReportBoard" parameterType="reportBoardDto">--  신고하기

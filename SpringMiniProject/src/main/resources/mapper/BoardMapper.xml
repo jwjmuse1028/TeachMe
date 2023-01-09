@@ -1,43 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="bit.data.dao.BoardDao">
-    <insert id="insertBoard" parameterType="boardDto">
+    <insert id="insertBoard" parameterType="boardDto">-- 게시글 작성
         insert into board (boardtype, usernum, nickname, subject, content, photo, readcount, likes, report, reportcheck, writeday)
         values (#{boardtype}, #{usernum}, #{nickname}, #{subject}, #{content}, #{photo}, 0, 0, 0, 'new', now())
     </insert>
-    <select id="getTotalCount" parameterType="Map" resultType="int">
+    <select id="getTotalCount" parameterType="Map" resultType="int">-- 총 게시글 수
         select count(*) from board where boardtype=#{boardtype}
         <if test="searchcolumn!=null and searchword!=null">
             and ${searchcolumn} like concat('%',#{searchword},'%')
         </if>
     </select>
-    <select id="getPagingList" parameterType="Map" resultType="boardDto">
+    <select id="getPagingList" parameterType="Map" resultType="boardDto">-- 페이징처리
         select * from board where boardtype=#{boardtype}
         <if test="searchcolumn!=null and searchword!=null">
             and ${searchcolumn} like concat('%',#{searchword},'%')
         </if>
         order by boardnum desc limit #{startnum},#{perpage}
     </select>
-
-    <select id="getHotList" resultType="boardDto">
+    <select id="getHotList" resultType="boardDto">-- 인기게시물 출력 (매주초기화)
         select * from board where writeday>=DATE_SUB(NOW(), INTERVAL 7 DAY) order by likes desc, readcount desc limit 5
     </select>
-
-    <select id="selectByNum" parameterType="int" resultType="boardDto">
+    <select id="selectByNum" parameterType="int" resultType="boardDto">-- 게시글번호 얻기
         select * from board where boardnum = #{boardnum}
     </select>
-    <update id="updateReadCount" parameterType="int">
+    <update id="updateReadCount" parameterType="int">-- 조회수 증가
         update board set
             readcount = readcount+1 where boardnum = #{boardnum}
     </update>
-    <update id="updateBoard" parameterType="boardDto">
+    <update id="updateBoard" parameterType="boardDto">-- 게시글 수정
         update board set subject = #{subject}, content = #{content}
         <if test="photo!=null">
             ,photo = #{photo}
         </if>
         where boardnum = #{boardnum}
     </update>
-    <delete id="deleteBoard" parameterType="int">
+    <delete id="deleteBoard" parameterType="int">-- 게시글 삭제
         delete from board where boardnum = #{boardnum}
     </delete>
     <update id="updateIncreLikeCount" parameterType="int"> <!--  좋아요 증가 -->
@@ -61,12 +59,4 @@
     <update id="updateReportCount" parameterType="int"><!-- 신고수 증가 -->
         update board set report=report+1 where boardnum=#{boardnum} 
     </update>
-<!--    <select id="getBoardTypeList" parameterType="Map" resultType="boardDto">&#45;&#45;  자유 질문 나눠서 출력-->
-<!--        select * from board-->
-<!--        <if test="searchcolumn!=null and searchword!=null">-->
-<!--            where ${searchcolumn} like concat('%',#{searchword},'%')-->
-<!--        </if>-->
-<!--            and where boardtype=#{boardtype}-->
-<!--        order by boardnum desc limit #{startnum},#{perpage}-->
-<!--    </select>-->
 </mapper>

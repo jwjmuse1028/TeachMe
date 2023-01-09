@@ -183,13 +183,13 @@ public class BoardController {
     }
 
     @GetMapping("/board/delete")
-    public String delete(int boardnum, int currentPage)
+    public String delete(int boardnum, int currentPage) //게시글 삭제
     {
         boardService.deleteBoard(boardnum);
         return "redirect:boardFree?currentPage="+currentPage;
     }
 
-    @PostMapping("/board/update")
+    @PostMapping("/board/update") //게시글 수정 등록하기
     public String update(BoardDto dto, int currentPage, List<MultipartFile>upload,
                          HttpServletRequest request)
     {
@@ -218,7 +218,7 @@ public class BoardController {
         boardService.updateBoard(dto);
         return "redirect:boardDetail?currentPage="+currentPage+"&boardnum="+dto.getBoardnum();
     }
-    @GetMapping("/board/boardUpdate")
+    @GetMapping("/board/boardUpdate") //게시글 수정폼
     public String updateform(Model model, int boardnum, int currentPage)
     {
         BoardDto dto = boardService.selectByNum(boardnum);
@@ -238,7 +238,7 @@ public class BoardController {
     @GetMapping("/board/nextboard")
     public String moveToNextBoard(int currentPage, int boardnum)
     {
-        boardnum=boardService.moveToNextBoard(boardnum);
+        boardnum=boardService.moveToNextBoard(boardnum); //다음글 보드넘버
         return "redirect:boardDetail?boardnum="+boardnum+"&currentPage="+currentPage;    }
 
 }

@@ -8,10 +8,6 @@
     <title>Insert title here</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Yeon+Sung&display=swap" rel="stylesheet">
-<%--    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>--%>
-    <%--     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>--%>
-    <%--    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>--%>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -88,7 +84,6 @@
             //좋아요 숫자 클릭시 좋아요 누른 아이디+닉네임 보이게 하기
             $(".likeusericon").click(function(){
                 var boardnum=${dto.boardnum};
-                //console.log("boardnum="+boardnum);
                 $.ajax({
                     type : "get",
                     url : "likesuser",
@@ -99,11 +94,6 @@
                         $.each(res,function(i,ids){
 
                             s+=ids+"<br><br>";
-                            // if(i%2==1){
-                            //     s+="<br><br>";
-                            // }else{
-                            //     s+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-                            // }
                         });
                         if(res.length==0){
                             s="좋아요한 회원이 없습니다";
@@ -121,7 +111,7 @@
                     }
                 });
             });
-            $(document).on("click",".redelete", function (){
+            $(document).on("click",".redelete", function (){ //댓글삭제
                 var reboardnum=$(this).attr("reboardnum");
                 var ans=confirm("댓글을 삭제하시겠습니까?");
                 if(ans){
@@ -136,9 +126,8 @@
                     });
                 }
             });
-            $(document).on("click",".report", function (){
+            $(document).on("click",".report", function (){ //게시글 신고
                 var boardnum=${dto.boardnum};
-                // console.log("boardnum="+boardnum);
                 var a='${sessionScope.loginok}';
                 if(a==''){
                     alert("로그인 후 이용해주세요");
@@ -176,10 +165,8 @@
                 dataType : "json",
                 data : {"boardnum":boardnum},
                 success : function(res) {
-                    // alert(res);
                     if(res==1){
 
-                      //  $(".fa fa-thumbs-o-up").attr("class","fa fa-thumbs-up").css("color","red");
                         $("span.likes i").attr("class","fa fa-thumbs-up").css("color","#4481eb");
 
                     }
@@ -306,16 +293,10 @@
             </td>
         </tr>
     </table>
-    <%--    <h1>${minboardnum},${dto.boardnum},${maxboardnum}</h1>--%>
-
     <c:if test="${dto.boardnum<maxboardnum}">
         <a href="nextboard?boardnum=${dto.boardnum}&currentPage=${currentPage}" style="color: black; text-decoration: none;">다음글&nbsp;
             <i class="fa fa-chevron-up" style="font-size:24px"></i>&nbsp;&nbsp;${nextboardsub}</a><hr>
     </c:if>
-
-
-
-
     <c:if test="${dto.boardnum>minboardnum}">
         <a href="prevboard?boardnum=${dto.boardnum}&currentPage=${currentPage}" style="color: black; text-decoration: none;">이전글&nbsp;
             <i class="fa fa-chevron-down" style="font-size:24px;cursor: pointer"></i>&nbsp;&nbsp;${prevboardsub}</a>
@@ -338,14 +319,12 @@
             }
 
             var boardnum=${dto.boardnum}; //좋아요 누른 사람들 아이콘 클릭시
-            //console.log(boardnum+","+likestate);
             $.ajax({
                 type : "get",
                 url : "likes",
                 dataType : "json",
                 data : {"boardnum":boardnum,"likestate":likestate},
                 success : function(res) {
-                    //  alert(res);
                     $("b.likesuser").text(res);
                 }
             });
@@ -399,9 +378,7 @@
     $(document).ready(function dos() {
         $('#main_menu > li > a').click(function () {
             $(this).next($('.snd_menu sub_menu')).slideToggle('fast');
-            // $(this).show($('.snd_menu sub_menu')("slide",{direction:'left'},1000));
         })
-        // e.stopPropagation();
     })
 </script>
 </body>
